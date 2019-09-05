@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <style>
+    .red{
+        color : red;
+        
+    }
+    .green{
+        color:green
+    }
+    .fsize{
+        font-size: 50px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app" >
+        <p :class="classobj">{{message}}</p>
+        <p :class="classarrobj">{{message}}</p>
+        <p :class="classarr">{{message}}</p>
+        <p :style="styleobj">{{message}}</p>
+        <p :style="[scolor,sborder]">{{message}}</p>
+    </div>
+    <script>
+        var app = new Vue({
+            el : '#app',
+            data : {
+                message : '我是被修饰文字',
+                classobj:{
+                    red : true,
+                    fsize : true
+                },
+                classarrobj:[{green:true},{fsize:true}],
+                classarr:["red","fsize"],
+                
+                styleobj:{
+                    color : "yellow",
+                    borderStyle : "solid"
+                },
+                scolor:{
+                    color : "blue",
+                    borderStyle : "solid"
+                }
+
+            }
+            
+        })
+    </script>
+</body>
+
+</html>
