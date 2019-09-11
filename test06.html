@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+    <!-- 自定义组件的属性实现双向绑定 -->
+    <div id="app">
+        <mycomponent :myprops.sync="mydata"></mycomponent>
+        <mycomponent :myprops="mydata" @update:myprops="(val)=>{mydata=val}"></mycomponent>
+    </div>
+    <script>
+        var mycomponent = {
+            template : "<div @click='handleClick'>test</div>",
+            props : {
+                myprops : String
+            },
+            methods : {
+                handleClick(){
+                    this.$emit("update:myprops","新的"+this.myprops)
+                }
+            }
+        }
+        var app = new Vue({
+            el: '#app',
+            data:{
+                mydata:"属性的值"
+            },
+            components:{
+                mycomponent
+            }
+        })
+    </script>
+</body>
+</html>
