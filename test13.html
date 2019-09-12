@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+    <!-- 插槽slot -->
+    <div id="app">
+        <test><p>插槽内容</p></test> 
+        <component2>
+            <p slot="s2">插入第二个内容</p>
+            <template v-slot:s3>插入内容v-slot:name</template>
+        </component2>
+        
+    </div>
+    <script>
+        Vue.component("test",{
+            template : `
+            <div>
+                <h2>component1</h2>
+                <slot></slot>
+            </div>
+            `
+        })
+        var component2 = {
+            template :`
+            <div>
+                <h2>component2</h2>
+                <slot name="s2"></slot>
+                <slot name="s3"></slot>
+            </div>
+            `
+        }
+        var app = new Vue({
+            el : '#app',
+            components : {
+                component2
+            }
+        })
+    </script>
+</body>
+</html>
