@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <style>
+    .list-enter,.list-levae-to{
+        opacity: 0;
+    }
+    .list-enter-active,.list-levae-active{
+        transition: all 1.5s
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+            <button @click='add'>添加</button>
+            <button @click='remove'>删除</button>
+            <transition-group name='list' tag='p'>
+                <span v-for='item in items':key='item'>{{item}},</span>
+            </transition-group>
+    </div>
+    <script>
+        var app = new Vue({
+            el : '#app',
+            data : {
+                items :[1,2,3,4,5,6,7,8,9],
+                num : 10
+            },
+            methods:{
+                randomIndex(){
+                    return Math.floor(Math.random()*this.items.length)
+                },
+                add(){
+                    this.items.splice(this.randomIndex(),0,this.num++)
+                },
+                remove(){
+                    this.items.splice(this.randomIndex(),1)
+                }
+
+            }
+        })
+    </script>
+</body>
+</html>
