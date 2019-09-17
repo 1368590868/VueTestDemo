@@ -1,0 +1,62 @@
+1.npm init 
+2.npm install --save-dev webpack webpack-cli webpack-dev-server
+3.写了index.html
+<script src="./dist/bundle.js"></script>
+<div class="app">hello webpack222</div>
+4.main.js 和 util.js
+4.1 util.js
+export default function say(){}
+4.2 main.js
+import say from './util'
+say()
+
+5.编写webpack.config.js
+//引入node自带的path模块
+const path = require('path');
+
+module.exports = {
+//打包的入口文件
+  entry: './src/js/main.js',
+//打包完成的输出文件
+  output: {
+//输出路径--当前目录下的dist目录下
+    path: path.resolve(__dirname, 'dist'),
+//输出的文件名称
+    filename: 'bundle.js'
+  },
+//webpack-dev-server的配置
+  devServer: {
+//指定打包js文件在服务器上的路径
+    publicPath: '/dist'
+  }
+}
+
+6.执行webpack-dev-server或者执行webpack打包
+在package.json文件中
+"build": "webpack",
+"dev": "webpack-dev-server"
+
+7.编写了my.css
+.app{
+  color:red;
+  font-size: 30px;
+}
+
+8.将my.css引入main.js
+import from '../css/my.css'
+
+9.引入css-loader和style-loader
+npm install --save-dev css-loader style-loader
+
+10.webpack.config.js中配置
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'style-loader' },{loader: 'css-loader'}
+          
+        ]
+      }
+    ]
+  }
