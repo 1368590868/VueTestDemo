@@ -22,3 +22,5 @@ git push origin HEAD -u /*推送到github
 
 查看删除后分支们
 命令行 : $ git branch -av
+
+test SSH
