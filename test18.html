@@ -20,7 +20,9 @@
             <button @click='add'>添加</button>
             <button @click='remove'>删除</button>
             <transition-group name='list' tag='p'>
-                <span v-for='item in items':key='item'>{{item}},</span>
+                <div v-for='item in items':key='item'>
+                   <span> {{item}},</span>
+                </div>
             </transition-group>
     </div>
     <script>
