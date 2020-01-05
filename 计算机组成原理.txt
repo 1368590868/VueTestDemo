@@ -1,0 +1,82 @@
+//path路径
+.;%JAVA_HOME%\bin;%M2_HOME%\bin;%GIT_HOME%\bin;%GIT_HOME%\cmd;%GIT_HOME%\usr\bin;%GIT_HOME%\mingw64\bin;D:\VSCode\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\npm
+
+2 6 7 9 10 11
+
+先来先服务：开始时间=开始时间+所需CPU时间
+		完成时间=开始时间+所需CPU时间
+		周转时间=完成时间-到达时间
+
+函数值传递引用方式，会改变实参的值；
+
+松弛时间=最长路径-最长路径
+
+优先队列通常用堆来实现
+
+关系模式R（U，F） 主键是入度为0的节点
+
+
+子串 (Substring)必须是连续的字符，子序列 (Subsequence)可以不连续
+
+环路复杂度：m-n+2
+
+海明码： 2n（添加为数）次方>信息位数+位数+1
+
+沟通路径：两两沟通 8人需要：7*8/2=28  有主程序员 7 
+
+保证系统不发生死锁，分配所需资源数减1
+
+负数原码符号位1	//69632		726015
+反码的表示方法是:
+
+正数的反码是其本身
+补码的表示方法是:
+
+正数的补码就是其本身
+
+负数的补码是在其原码的基础上, 符号位不变, 其余各位取反, 最后+1. (即在反码的基础上+1)
+
+负数的反码是在其原码的基础上, 符号位不变，其余各个位取反.
+
+UML类图
+· + ：表示public
+
+· - ：表示private
+
+· #：表示protected（friendly也归入这类）
+
+3条指令完成100条需要时间
+4+3+2+（100-1）*4
+
+MD5消息摘要算法（英语：MD5 Message-Digest Algorithm），一种被广泛使用的密码散列函数，
+可以产生出一个128位（16字节）的散列值（hash value），用于确保信息传输完整一致。
+RSA加密演算法是一种非对称加密演算法。
+国际数据加密算法（IDEA）对称加密
+RC4（来自Rivest Cipher 4的缩写）是一种流加密算法，密钥长度可变。
+
+
+mongod --dbpath=H:\workspace\DB     //解决easymock dev error	在mongoDB  bin 文件内运行
+
+
+npm run build
+dist文件copy
+
+cross-env NODE_ENV=production pm2 start app.js    //开启mock服务
+
+//nvm 控制node版本
+nvm list
+nvm install (版本)
+nvm user (版本)
+
+
+//nginx命令
+ps aux | grep nginx		查看端口
+
+解决nginx 端口被占用
+kill -9 598
+
+netstat -ntlp|grep 80 
+
+
+PM2 部署项目
+pm2 start npm --name "blog" -- run start
