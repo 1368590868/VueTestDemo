@@ -54,8 +54,15 @@ RSA加密演算法是一种非对称加密演算法。
 国际数据加密算法（IDEA）对称加密
 RC4（来自Rivest Cipher 4的缩写）是一种流加密算法，密钥长度可变。
 
+ps -ef|grep mongo     //查看pid进程
 
 mongod --dbpath=H:\workspace\DB     //解决easymock dev error	在mongoDB  bin 文件内运行
+mongod --config /etc/mongod.conf    //mongodb解决data路径问题
+
+博客数据库
+//admin  ranlin520..       超级管理员
+
+//root    ranlin520..       blog用户
 
 
 npm run build
